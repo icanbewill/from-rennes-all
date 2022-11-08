@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TestController extends AbstractController
@@ -28,6 +29,11 @@ class TestController extends AbstractController
     {
         $request = Request::createFromGlobals();
         $dep = $request->query->get('dep', 0);
-        dd("Mais je suis $dep");
+        return new Response("Bien dans le département $dep");
+    }
+
+    public function testAge(Request $request)
+    {
+        dd($request);
     }
 }
