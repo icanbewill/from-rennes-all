@@ -1,6 +1,10 @@
-index:
+testage:
    path: /testage/{age}
    controller: App\Controller\TestController::testAge
    # requirements:
    #    # age: \d+
    #    methods : [POST]
+
+index:
+   path: /{prenom}
+   controller: App\Controller\HelloController::hello
